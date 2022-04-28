@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <!-- Chamando Libs X3DOM-->
+    <script src="http://www.x3dom.org/release/x3dom.js"></script>
+    <link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css">
+
+</head>
+<body>
+    <x3d>
+        <scene>
+            <!-- MOVIMENTAÇÃO -->
+            <Viewpoint id="front" position="-0.07427 0.95329 -2.79608" orientation="-0.01451 0.99989 0.00319 3.15833" description="camera"></Viewpoint>
+            <Viewpoint id="right" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>
+            <Transform>
+                <Inline url="deer.x3d"></Inline>
+            </Transform>
+
+            <!-- GRUPO CENARIO -->
+            <transform translation="0 0 0">
+                <group DEF="Cenario">
+    
+                <!-- CHÃO -->
+                <group DEF="Chão">
+                    <!-- Chão -->
+                    <transform translation="500 0 0"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/chao.jpg"/>
+                        </appearance>
+                        <box size="7000 1 5000"/>   <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                     </transform>
+
+                    <!-- Chão -->
+                    <transform translation="1500 0 3500"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/chao.jpg"/>
+                    </appearance>
+                    <box size="5000 1 2000"/>   <!--Size: Largura, Altura, Profundidade -->
+                </shape>
+                    </transform>
+                </group>
+
+                <!--PAREDES-->
+                <group DEF=Paredes>
+                    <!--Parede porta-->
+                    <group DEF="Parede Porta"> 
+                        <transform translation="-3000 1000 600"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/parede.jpg"/>
+                            </appearance>
+                        <box size="1 2000 3800 "/> <!--Size: Largura, Altura, Profundidade -->
+                        </shape>
+                        </transform>
+
+                        <transform translation="-3000 1700 -1700"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/parede.jpg"/>
+                            </appearance>
+                            <box size="1 600 800 "/> <!--Size: Largura, Altura, Profundidade -->
+                        </shape>
+                        </transform>
+
+                        <transform translation="-3000 1000 -2300"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/parede.jpg"/>
+                            </appearance>
+                            <box size="1 2000 400 "/> <!--Size: Largura, Altura, Profundidade -->
+                        </shape>
+                        </transform>
+                    </group>
+
+                    <!-- Parede Janelas-->
+                    <transform translation="4000 1000 1000"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/parede.jpg"/>
+                        </appearance>
+                        <box size="1 2000 7000 "/> <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                    </transform>
+
+                    <!-- Parede Lousa-->
+                    <transform translation="500 1000 -2500"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/parede.jpg"/>
+                        </appearance>
+                        <box size="7000 2000 1 "/> <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                    </transform>
+                
+                    <!--Parede Quina -->
+                    <transform translation="-1000 1000 3500"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/parede.jpg"/>
+                        </appearance>
+                        <box size="1 2000 2000 "/> <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                    </transform>
+                
+                    <!-- Parede FUndo-->
+                    <transform translation="1500 1000 4500"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/parede.jpg"/>
+                        </appearance>
+                        <box size="5000 2000 1 "/> <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                    </transform>
+
+                    <!-- Parede FUndo-->
+                    <transform translation="-2000 1000 2500"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="/Texture/parede.jpg"/>
+                        </appearance>
+                        <box size="2000 2000 1 "/> <!--Size: Largura, Altura, Profundidade -->
+                    </shape>
+                    </transform>
+                </group>
+                </group>
+            </transform>
+
+            <!-- GRUPO LOUSA -->
+            <transform translation="500 1100 -2480" scale="12 12 12">
+                <group DEF="Lousa_group">
+                <scene DEF="lousa">
+                    <!-- Base-->
+                    <transform translation="0 -2 0">
+                        <shape DEF="base">
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa-lateral.jpg"/>
+                            </appearance>
+                            <box size="350 116 1.5"/>
+                        </shape>
+                    </transform>
+                    <!--Esquerda -->
+                    <transform translation="175 0 1.5">
+                        <shape DEF="bordasLaterais">
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa-lateral.jpg"/>
+                            </appearance>
+                            <box size="8 112 1.5"/>
+                        </shape>
+                    </transform>
+        
+                    <!--Direita -->
+                    <transform translation="-175 0 1.5">
+                        <shape USE="bordasLaterais">
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa-lateral.jpg"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+        
+                    <!--Cima -->
+                    <transform translation="0 52 1.5">
+                        <shape DEF="Base_baixo">
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa-lateral.jpg"/>
+                            </appearance>
+                            <box size="350 8 1.5"/>
+                        </shape>
+                    </transform>
+        
+                    <!--Baixo -->
+                    <transform translation="0 -56 1.5">
+                        <shape DEF="Base_baixo">
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa-lateral.jpg"/>
+                            </appearance>
+                            <box size="358 8 1.5"/>
+                        </shape>
+                    </transform>
+        
+                    <!-- Fudo Escrito -->
+                    <transform translation="0 -2 3">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/lousa.jpg"/>
+                            </appearance>
+                            <box size="342 102 1.5"/>
+                        </shape>
+                    </transform>
+                </scene>
+                </group>
+            </transform>
+
+            <!-- GRUPO MESA ALUNOS -->
+            <transform translation="0 0 0">
+                <group DEF="Mesas">
+
+                <transform translation="0 0 400" scale="1 1 1" >
+                    <group DEF="conj-mesas">
+                    <transform translation="-2200 620 0" rotation="0 1 0 1.5708">
+                    <group DEF="mesa">
+                <scene>
+                    <!-- Base da Mesa -->
+                    <transform translation="0 0 0">
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/base-mesa.jpg"/>
+                    </appearance>
+                    <box size="1200, 25, 740"/>
+                </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 01-->
+                    <transform translation="520, -312, 80">
+                    <shape DEF="base_lateral">
+                        <appearance>
+                            <ImageTexture url="/Texture/barra-mesa.jpg"/>
+                        </appearance>
+                        <box size="20 600 40"/>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 02-->
+                    <transform translation="520, -312, -80">
+                    <shape USE="base_lateral">
+                        <appearance>
+                            <material diffuseColor="0 1 0"/>
+                        </appearance>
+                    </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 03-->
+                    <transform translation="-520, -312, -80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 04-->
+                    <transform translation="-520, -312, 80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Parte de Trás -->
+                    <transform translation="0, -160, 110">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/base-mesa.jpg"/>
+                            </appearance>
+                            <box size="1080 300 20"/>
+                        </shape>
+                    </transform>
+                </scene>
+                    </group>
+                    </transform>
+
+                    <transform translation="-2200 620 1200" rotation="0 1 0 1.5708">
+                    <group DEF="mesa">
+                <scene>
+                    <!-- Base da Mesa -->
+                    <transform translation="0 0 0">
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/base-mesa.jpg"/>
+                    </appearance>
+                    <box size="1200, 25, 740"/>
+                </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 01-->
+                    <transform translation="520, -312, 80">
+                    <shape DEF="base_lateral">
+                        <appearance>
+                            <ImageTexture url="/Texture/barra-mesa.jpg"/>
+                        </appearance>
+                        <box size="20 600 40"/>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 02-->
+                    <transform translation="520, -312, -80">
+                    <shape USE="base_lateral">
+                        <appearance>
+                            <material diffuseColor="0 1 0"/>
+                        </appearance>
+                    </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 03-->
+                    <transform translation="-520, -312, -80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 04-->
+                    <transform translation="-520, -312, 80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Parte de Trás -->
+                    <transform translation="0, -160, 110">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/base-mesa.jpg"/>
+                            </appearance>
+                            <box size="1080 300 20"/>
+                        </shape>
+                    </transform>
+                </scene>
+                        </group>
+                    </transform>
+
+                    <transform translation="-1600 620 0" rotation="0 1 0 -1.5708">
+                    <group DEF="mesa">
+                <scene>
+                    <!-- Base da Mesa -->
+                    <transform translation="0 0 0">
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/base-mesa.jpg"/>
+                    </appearance>
+                    <box size="1200, 25, 740"/>
+                </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 01-->
+                    <transform translation="520, -312, 80">
+                    <shape DEF="base_lateral">
+                        <appearance>
+                            <ImageTexture url="/Texture/barra-mesa.jpg"/>
+                        </appearance>
+                        <box size="20 600 40"/>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 02-->
+                    <transform translation="520, -312, -80">
+                    <shape USE="base_lateral">
+                        <appearance>
+                            <material diffuseColor="0 1 0"/>
+                        </appearance>
+                    </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 03-->
+                    <transform translation="-520, -312, -80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 04-->
+                    <transform translation="-520, -312, 80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Parte de Trás -->
+                    <transform translation="0, -160, 110">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/base-mesa.jpg"/>
+                            </appearance>
+                            <box size="1080 300 20"/>
+                        </shape>
+                    </transform>
+                </scene>
+                    </group>
+                    </transform>
+
+                    <transform translation="-1600 620 1200" rotation="0 1 0 -1.5708">
+                    <group DEF="mesa">
+                <scene>
+                    <!-- Base da Mesa -->
+                    <transform translation="0 0 0">
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/base-mesa.jpg"/>
+                    </appearance>
+                    <box size="1200, 25, 740"/>
+                </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 01-->
+                    <transform translation="520, -312, 80">
+                    <shape DEF="base_lateral">
+                        <appearance>
+                            <ImageTexture url="/Texture/barra-mesa.jpg"/>
+                        </appearance>
+                        <box size="20 600 40"/>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 02-->
+                    <transform translation="520, -312, -80">
+                    <shape USE="base_lateral">
+                        <appearance>
+                            <material diffuseColor="0 1 0"/>
+                        </appearance>
+                    </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 03-->
+                    <transform translation="-520, -312, -80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Pé lateral 04-->
+                    <transform translation="-520, -312, 80">
+                        <shape USE="base_lateral">
+                            <appearance>
+                                <material diffuseColor="0 0 1"/>
+                            </appearance>
+                        </shape>
+                    </transform>
+    
+                    <!-- Parte de Trás -->
+                    <transform translation="0, -160, 110">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/base-mesa.jpg"/>
+                            </appearance>
+                            <box size="1080 300 20"/>
+                        </shape>
+                    </transform>
+                </scene>
+                    </group>
+                    </transform>
+                    </group>
+                </transform>
+
+                <transform translation="2200 0 2000" scale="1 1 1">
+                    <group USE="conj-mesas">
+                    </group>
+                </transform>
+
+                <!--Mesa do meio-->
+                <transform translation="2200 0 100" scale="1 1 1">
+                    <group USE="conj-mesas">
+                    </group>
+                </transform>
+
+                <!--Ultima-->
+                <transform translation="4500 0 2000" scale="1 1 1">
+                    <group USE="conj-mesas">
+                    </group>
+                </transform>
+
+                <transform translation="4500 0 100" scale="1 1 1">
+                    <group USE="conj-mesas">
+                    </group>
+                </transform>
+                </group>
+            </transform>
+
+            <!-- MESA PROFESSOR -->
+            <transform translation="2400 600 -1350" scale="1.5 1 1.2">
+                <group USE="mesa">
+                </group>
+            </transform>
+
+            <!-- JANELA -->
+            <transform translation="3950 1000 1000"> <!-- Eixo X, Eixo Y, Eixo Z-->
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/janela.jpg"/>
+                    </appearance>
+                    <box size="1 2000 7000 "/> <!--Size: Largura, Altura, Profundidade -->
+                </shape>
+            </transform>
+
+            <!-- LIXEIRA -->
+            <transform translation="0 0 0">
+                <group>
+                <!-- Base -->
+                <transform translation="-2700 300 -800">
+                <group>
+                    <shape>
+                        <appearance>
+                           <ImageTexture url="/Texture/lixeira.jpg"/>
+                        </appearance>
+                        <cylinder radius='200' height='600'/>
+                    </shape>
+                </transform>
+
+                <!-- Tampa -->
+                <transform translation="-2700 610 -800">
+                    <group>
+                        <shape>
+                            <appearance>
+                               <ImageTexture url="/Texture/saco-lixo.png"/>
+                            </appearance>
+                            <cylinder radius='180' height='20'/>
+                        </shape>
+                    </transform>
+
+                </group>
+            </transform>
+
+            <!-- AR CONDICIONADO -->
+            <transform translation="-2880 1800 -400" rotation="0 1 0 1.5708">
+                <group DEF="ar">
+                    <scene>
+                    <transform translation="0 0 0">
+                    <group DEF="Base">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/ar-fundo.jpg">
+                            </appearance>
+                            <box size="998 330 200"/>
+                        </shape>
+                    </group>
+                    </transform>
+        
+                    <transform translation="0 0 108">
+                    <group DEF="Frente">
+                        <shape>
+                            <appearance>
+                                <ImageTexture url="/Texture/ar-condicionado.png">
+                            </appearance>
+                            <box size="998 330 10"/>
+                        </shape>
+                    </group>
+                    </transform>
+        
+                    </scene>
+                </group>
+            </transform>
+
+            <!-- CADEIRAS -->
+            <group>
+            <!-- Cadeiras Mesa Central -->
+            <transform translation="0 0 0">
+            <group DEF="grupos_cadeiras">
+            <!-- Cadeira 01 -->
+            <transform translation="-200 420 200" scale="10 10 10" rotation="0 1 0 1.5708">
+                <group DEF="cadeira">
+                <scene>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='43, 5, 46' />
+                    </shape>
+            
+                  <transform translation= '-21 0 -23'>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 85, 4' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '21 0 -23'>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 85, 4' />
+                    </shape>
+                  </transform>
+                 
+                  <transform translation= '21 -19.25 23'>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 42.5, 4' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '-21 -19.25 23'>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 42.5, 4' />
+                    </shape>
+                  </transform>
+            
+                 <transform translation= '0 -19.25 23'> 
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='43, 4, 2' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '0 -19.25 -23'> 
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='43, 4, 2' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '-21.15 -19.25 0'> 
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 4, 43' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '21.15 -19.25 0'> 
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='2, 4, 43' />
+                    </shape>
+                  </transform>
+            
+                  <transform translation= '0 27 -23'>
+                    <shape>
+                      <appearance>
+                        <imageTexture url='/Texture/cadeira.jpg'/>
+                      </appearance>
+                      <box size ='43, 30, 4' />
+                    </shape>
+                  </transform>
+                  </scene>
+                </group>
+            </transform>
+
+            <!-- Cadeira 02 -->
+            <transform translation="-200 420 1300" scale="10 10 10" rotation="0 1 0 1.5708">
+                <group USE="cadeira">
+                </group>
+            </transform>
+
+            <!-- Cadeira 03 -->
+                <transform translation="-200 420 2400" scale="10 10 10" rotation="0 1 0 1.5708">
+                    <group USE="cadeira">
+                    </group>
+                </transform>
+
+            <!-- Cadeira 03 -->
+                <transform translation="-200 420 3400" scale="10 10 10" rotation="0 1 0 1.5708">
+                    <group USE="cadeira">
+                    </group>
+                </transform>
+                </group>
+            </transform>
+
+            <transform translation="600 0 3600" rotation="0 1 0 -3.14159">
+                <group USE="grupos_cadeiras">
+                </group>
+            </transform>
+
+            <!-- Cadeiras Mesa Janela -->
+            <transform translation="2900 0 3600" rotation="0 1 0 3.14159">
+                <group USE="grupos_cadeiras">
+                </group>
+            </transform>
+
+            <transform translation="2300 0 50">
+                <group USE="grupos_cadeiras">
+                </group>
+            </transform>
+
+            <!-- Cadeiras da Mesa da Porta -->
+            <transform translation="-2400 420 400" scale="10 10 10" rotation="0 1 0 1.5708">
+                <group USE="cadeira">
+                </group>
+            </transform>
+
+            <transform translation="-2400 420 1500" scale="10 10 10" rotation="0 1 0 1.5708">
+                <group USE="cadeira">
+                </group>
+            </transform>
+
+            <transform translation="-1400 420 400" scale="10 10 10" rotation="0 1 0 -1.5708">
+                <group USE="cadeira">
+                </group>
+            </transform>
+
+            <transform translation="-1400 420 1500" scale="10 10 10" rotation="0 1 0 -1.5708">
+                <group USE="cadeira">
+                </group>
+            </transform>
+
+            <!-- Cadeira do professor -->
+            <transform translation="2500 420 -1700" scale="10 10 10">
+                <group USE="cadeira">
+                </group>
+            </transform>
+            </group>
+
+            <!-- PORTA -->
+            <group>
+                <transform translation="-2580 700 -2000" rotation="0 1 0 1.309">
+                <group>
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/porta01.jpg">
+                    </appearance>
+                    <box size="20 1400 800"
+                </shape>
+                </group>
+                </transform>
+
+                <transform translation="-2580 700 -2020" rotation="0 1 0 1.309">
+                <group>
+                <shape>
+                    <appearance>
+                        <ImageTexture url="/Texture/porta.jpg">
+                    </appearance>
+                    <box size="20 1400 800"
+                </shape>
+                </group>
+                </transform>
+            </group>
+
+            <!-- NOTEBOOK -->
+            <transform translation="0 0 0">
+            <group>
+                <!-- MESA CENTRAL -->
+                <group DEF="nt-conjunto">
+
+                <!-- Direita -->
+                <transform translation="0 650 200" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                    <group DEF="Notebook">
+                        <!-- BASE -->
+                        <group>
+                            <transform translation="0 0.23 0">
+                            <group>
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/teclado.jpg">
+                                        </appearance>
+                                    <box size="10 0.1 6"/>
+                                </shape>
+                            </group>
+                            </transform>
+    
+                            <transform translation="0 0 0">
+                                <group>
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/texture-notebook.png">
+                                    </appearance>
+                                    <box size="10 0.499 6"/>
+                                </shape>
+                                </group>
+                            </transform>
+    
+                        </group>
+    
+                        <!-- APOIO BASE -->
+                        <group>
+                        <transform translation="1 0 -2">
+                        <group DEF="base-notebook">
+                            <transform translation="3 -0.3 4"/>
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <box size="0.5 0.2 0.5"/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <transform translation="-7 0 -2">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+    
+                        <transform translation="1 0 -6">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+    
+                        <transform translation="-7 0 -6">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+                        </group>
+    
+                        <!-- NIVEL DE ABERTURA -->
+                        <transform translation="0 0.3 -3" rotation="0 0 1 1.5708">
+                        <group DEF="abertura-notebook">
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <cylinder radius='0.3' height='8'/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <!-- MONITOR -->
+                        <transform translation="0 3.3 -3.2">
+                        <group DEF="monitor-notebook">
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <box size="10 6 0.1"/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <transform translation="0 3.3 -3.199">
+                            <group DEF="monitor-notebook">
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/tela-nt.png">
+                                    </appearance>
+                                    <box size="10 6 0.1"/>
+                                </shape>
+                            </group>
+                            </transform>
+                    </group>
+                </transform>
+
+                <transform translation="0 650 1300" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                <transform translation="0 650 2400" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                <transform translation="0 650 3400" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                    
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                <!-- Esquera -->
+                <transform translation="600 650 200" rotation="0 1 0 1.5708" scale="30 30 30" >
+                    <group DEF="Notebook">
+                        <!-- BASE -->
+                        <group>
+                            <transform translation="0 0.23 0">
+                            <group>
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/teclado.jpg">
+                                        </appearance>
+                                    <box size="10 0.1 6"/>
+                                </shape>
+                            </group>
+                            </transform>
+    
+                            <transform translation="0 0 0">
+                                <group>
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/texture-notebook.png">
+                                    </appearance>
+                                    <box size="10 0.499 6"/>
+                                </shape>
+                                </group>
+                            </transform>
+    
+                        </group>
+    
+                        <!-- APOIO BASE -->
+                        <group>
+                        <transform translation="1 0 -2">
+                        <group DEF="base-notebook">
+                            <transform translation="3 -0.3 4"/>
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <box size="0.5 0.2 0.5"/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <transform translation="-7 0 -2">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+    
+                        <transform translation="1 0 -6">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+    
+                        <transform translation="-7 0 -6">
+                            <group USE="base-notebook">
+                            </group>
+                        </transform>
+                        </group>
+    
+                        <!-- NIVEL DE ABERTURA -->
+                        <transform translation="0 0.3 -3" rotation="0 0 1 1.5708">
+                        <group DEF="abertura-notebook">
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <cylinder radius='0.3' height='8'/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <!-- MONITOR -->
+                        <transform translation="0 3.3 -3.2">
+                        <group DEF="monitor-notebook">
+                            <shape>
+                                <appearance>
+                                    <ImageTexture url="/Texture/texture-notebook.png">
+                                </appearance>
+                                <box size="10 6 0.1"/>
+                            </shape>
+                        </group>
+                        </transform>
+    
+                        <transform translation="0 3.3 -3.199">
+                            <group DEF="monitor-notebook">
+                                <shape>
+                                    <appearance>
+                                        <ImageTexture url="/Texture/tela-nt.png">
+                                    </appearance>
+                                    <box size="10 6 0.1"/>
+                                </shape>
+                            </group>
+                            </transform>
+                    </group>
+                </transform>
+
+                <transform translation="600 650 1300" rotation="0 1 0 1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                <transform translation="600 650 2400" rotation="0 1 0 1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                <transform translation="600 650 3400" rotation="0 1 0 1.5708" scale="30 30 30" >
+                    
+                    <group USE="Notebook">
+                    </group>
+                </transform>
+
+                </group>
+
+                <!-- MESA JANELA-->
+                <transform translation="2300 0 0">
+                    <group USE="nt-conjunto">
+                    </group>
+                </transform>
+
+                <!--MESA PORTA -->
+
+                <group>
+                <!-- DIREITA -->
+                    <transform translation="-2300 650 1500" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                    </transform>
+
+                    <transform translation="-2300 650 400" rotation="0 1 0 -1.5708" scale="30 30 30" >
+                        <group USE="Notebook">
+                        </group>
+                    </transform>
+                    </group>
+
+                <!-- ESQUERDA -->
+                <transform translation="-1600 650 1500" rotation="0 1 0 1.5708" scale="30 30 30" >
+                    <group USE="Notebook">
+                    </group>
+                    </transform>
+
+                    <transform translation="-1600 650 400" rotation="0 1 0 1.5708" scale="30 30 30" >
+                        <group USE="Notebook">
+                        </group>
+                    </transform>
+                    </group>
+                </group>
+
+            </group>
+
+
+            </transform>
+
+            <!--COMPUTADOR PROFESSOR -->
+            <transform translation="3400 0 -1400" scale="15 15 15" rotation="0 1 0 3.14159">
+            <group DEF='Desktop'>
+                <group DEF='Monitor'>
+                    <!--Alça base esquerda-->
+                    <transform translation='48, 41, -10' rotation='0, 1, 0, -0.81'>
+                    <shape DEF='base_monitor'>
+                        <appearance>
+                            <ImageTexture url='/Texture/plastico.jpg'/>
+                        </appearance>
+                        <box size='2, 1, 10'/>
+                    </shape>
+                    </transform>
+
+                    <!--Alça base direita-->
+                    <transform translation='54, 41 -10' rotation='0, 1, 0, 0.81'>
+                    <shape USE='base_monitor'>
+                    </shape>
+                    </transform>
+
+                    <!-- Base de altura  -->
+                    <transform translation='51, 46.5, -13'>
+                        <shape>
+                            <appearance>
+                                <ImageTexture url='/Texture/plastico.jpg'/>
+                            </appearance>
+                            <cylinder radius='1' height='10'/>
+                        </shape>
+                    </transform>
+                    
+                    <!-- Base de Fixação -->
+                    <transform translation='51, 52, -12'>
+                        <shape>
+                            <appearance>
+                                <ImageTexture url='/Texture/plastico.jpg'/>
+                            </appearance>
+                            <box size='4, 3, 4'/>
+                        </shape>
+                    </transform>
+
+                    <!-- Tela -->
+                    <transform translation='50, 54, -10'>
+                        <shape>
+                            <appearance>
+                                <ImageTexture url='/Texture/plastico.jpg'/>
+                            </appearance>
+                            <box size='32, 18, 1'/>
+                        </shape>
+                    </transform>
+
+                    <!-- Img -->
+                    <transform translation='51, 54, -9.4'>
+                        <shape>
+                            <appearance>
+                                <MovieTexture repeatS="false" repeatT="false" loop='true' url='/Texture/tela.ogx'/>
+                            </appearance>
+                            <box size='28, 16, 0'/>
+                        </shape>
+                    </transform>
+
+                </group> 
+                <group DEF='keyboard_and_mouse'>
+                    <!-- Mousepad-->
+                    <transform translation='52, 41, 10'>
+                        <shape>
+                            <appearance>
+                                <ImageTexture url='/Texture/mousepad.jpg'/>
+                            </appearance>
+                            <box size='40 0.5 20'/>
+                        </shape>
+                    </transform>
+
+                    <!-- Base teclado -->
+                    <transform translation='50, 41, 12'>
+                        <shape>
+                            <appearance>
+                                <ImageTexture url='/Texture/plastico.jpg'/>
+                            </appearance>
+                            <box size='17 2 8'/>
+                        </shape>
+                    </transform>    
+                    <!-- Textura teclado -->
+                    <transform translation='50, 42.1, 12'>
+                        <shape>
+                            <appearance>
+                                <MovieTexture repeatS="false" repeatT="false" loop='true' url='/Texture/keyboard.mp4'/>
+                            </appearance>
+                            <box size='17 0 8'/>
+                        </shape>
+                    </transform>    
+                </group>
+            </group>
+            </transform>
+        </group>
+
+        </scene>
+    </x3d>
+    <button onclick="document.getElementById('right').setAttribute('set_bind','true');">Right</button>
+    <button onclick="document.getElementById('front').setAttribute('set_bind','true');">Left </button>
+</body>
+</html>
