@@ -3,7 +3,6 @@
 <p align="center">
     <a href="#Sobre">Sobre</a>
     <a href="#Instalação">Instalação</a>
-    <a href="#Autores">Autores</a>
 </p>
 
 ![](./screenshot.PNG)
@@ -21,13 +20,3 @@ git clone https://github.com/krzgvfs/Projeto-X3D.git
 - Instale a extensão <b>Live Server<b> no Visual Studio Code.
 
 - Abra o arquivo <b>index.html<b> e clique em <b>Go Live<b> no parte inferior direita tela.
-
-# Autores 
-Amanda Sousa De Oliveira<br>
-André Peixoto Silvestre<br>
-Caio Victor Xavier da Costa<br>
-Gabriel Vieira dos Santos<br>
-Gabrielle Queiroz Pereira<br>
-João Paulo Silva de Morais<br>
-Luis Henrique Silva<br>
-Marcos André Santos Junior
